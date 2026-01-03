@@ -7,5 +7,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app .
 ENV ASPNETCORE_URLS=http://+:80
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV DOTNET_ENVIRONMENT=Development
 EXPOSE 80
 ENTRYPOINT ["dotnet", "Product.API.dll"]
